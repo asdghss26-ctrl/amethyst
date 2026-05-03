@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 pt-8 border-t border-[#3E3E3E] flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-[#9A94A0]">© 2026 Dermato. All rights reserved</p>
+          <p className="text-xs text-[#9A94A0]">© 2026 Amethyst. All rights reserved</p>
           <p className="text-xs text-[#9A94A0]">
             Designed by <span className="text-[#CFA1A8]">Webestica</span>, Powered by <span className="text-[#CFA1A8]">Webflow</span>
           </p>

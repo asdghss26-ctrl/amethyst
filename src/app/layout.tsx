@@ -17,9 +17,9 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Dermato - Advanced Dermatology & Aesthetics",
+  title: "Amethyst - Advanced Dermatology & Aesthetics",
   description:
-    "Advanced dermatology and aesthetic treatments for clear, healthy skin. Book a consultation with Dermato's board-certified skin specialists today.",
+    "Advanced dermatology and aesthetic treatments for clear, healthy skin. Book a consultation with Amethyst's board-certified skin specialists today.",
 };
 
 export default function RootLayout({
