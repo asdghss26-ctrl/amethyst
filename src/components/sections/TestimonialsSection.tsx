@@ -1,0 +1,98 @@
+"use client";
+import { useState } from "react";
+import { testimonials } from "@/lib/data/testimonials";
+import { Reveal } from "../ui/RevealAnimation";
+
+export default function Testimonials() {
+  const [active, setActive] = useState(0);
+
+  return (
+    <section className="py-28 bg-[#EFE7DF]">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+          <div className="flex flex-col gap-8 w-full">
+            <Reveal delay={0.1}>
+              <div>
+                <div className="inline-flex items-center gap-2 border border-[#E4DFE8] rounded-full px-4 py-1.5 mb-4 md:mb-5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8E5C8F]"></span>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8E5C8F]">Patient Stories</span>
+                </div>
+                <h2
+                  className="text-4xl md:text-5xl lg:text-6xl text-[#2E2E2E] leading-[1.1]"
+                  style={{ fontFamily: "var(--font-dm-serif), serif" }}
+                >
+                  What our<br />patients say
+                </h2>
+              </div>
+            </Reveal>
+
+            <div className="flex gap-3">
+              <button
+                onClick={() => setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+                className="w-11 h-11 rounded-full border border-[#E4DFE8] flex items-center justify-center text-[#2E2E2E] hover:bg-[#5A2A5D] hover:text-white hover:border-[#5A2A5D] transition-all duration-300"
+              >
+                ←
+              </button>
+              <button
+                onClick={() => setActive((prev) => (prev + 1) % testimonials.length)}
+                className="w-11 h-11 rounded-full border border-[#E4DFE8] flex items-center justify-center text-[#2E2E2E] hover:bg-[#5A2A5D] hover:text-white hover:border-[#5A2A5D] transition-all duration-300"
+              >
+                →
+              </button>
+            </div>
+
+            <Reveal delay={0.2}>
+              <div className="bg-white rounded-[28px] md:rounded-[32px] p-6 md:p-8 border border-[#E4DFE8] shadow-sm">
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: testimonials[active].rating }).map((_, j) => (
+                    <svg key={j} className="w-4 h-4 text-[#5A2A5D] fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-[#2E2E2E] leading-relaxed text-sm md:text-base italic mb-6">
+                  &ldquo;{testimonials[active].text}&rdquo;
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#F2EAF3] flex items-center justify-center text-[#5A2A5D] font-semibold text-sm flex-shrink-0">
+                    {testimonials[active].name[0]}
+                  </div>
+                  <div>
+                    <p className="text-xs md:text-sm font-semibold text-[#2E2E2E]">{testimonials[active].name}</p>
+                    <p className="text-[10px] md:text-xs text-[#6B6570]">{testimonials[active].role}</p>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.3}>
+              <div className="flex gap-2">
+                {testimonials.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActive(i)}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${active === i ? "w-8 bg-[#5A2A5D]" : "w-3 bg-[#E4DFE8]"}`}
+                  />
+                ))}
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={0.2}>
+            <div
+              className="rounded-[36px] md:rounded-[48px] overflow-hidden h-[360px] sm:h-[400px] md:h-[580px] w-full"
+              style={{ background: "linear-gradient(160deg, #CFA1A8 0%, #5A2A5D 50%, #8E5C8F 100%)" }}
+            >
+              <div className="h-full w-full flex items-end p-6">
+                <div className="bg-white/70 backdrop-blur-sm rounded-2xl px-5 py-4 w-full">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[#8E5C8F] mb-1">Real Results · Real Patients</p>
+                  <p className="text-sm text-[#2E2E2E]">12 Weeks · Acne Treatment</p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,6 @@
+export type { Service } from "./services"
+export type { Testimonial } from "./testimonials"
+export type { BlogPost } from "./blog"
+export type { FAQItem } from "./faq"
+export type { Treatment } from "./treatments"
+export type { NavItem, ContactInfo } from "./navigation"
