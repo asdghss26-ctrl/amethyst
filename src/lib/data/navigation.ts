@@ -5,14 +5,14 @@ export interface NavItem {
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ]
 
 export const quickLinks: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "Services", href: "#services" },
   { label: "Service Static", href: "#" },
   { label: "Blog", href: "#" },

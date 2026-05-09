@@ -10,4 +10,4 @@ export { default as CTABannerSection } from './sections/CTABannerSection'
 export { default as Navbar } from './layout/Navbar'
 export { default as Footer } from './layout/Footer'
 
-export { default as RevealAnimation } from './ui/RevealAnimation'
+export { Reveal } from './ui/RevealAnimation'

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,7 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${dmSerif.variable}`}>
-      <body className="antialiased bg-[#F8F3EF] text-[#42291B]">{children}</body>
+      <body className="antialiased bg-[#F8F3EF] text-[#42291B]">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
